@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="91mm" height="55mm" viewBox="0 0 910 550" role="img" aria-labelledby="title desc">
+  <title id="title">下村宗大 名刺 表面</title>
+  <desc id="desc">白をベースに自然な緑をアクセントにした、環境を意識する横型名刺</desc>
+  <rect width="910" height="550" fill="#FCFDF9"/>
+  <path d="M0 0H910V78C790 115 704 92 617 55C453-14 235 56 0 92Z" fill="#E9F3E8"/>
+  <circle cx="818" cy="116" r="142" fill="#D8EBD7" opacity=".8"/>
+  <circle cx="818" cy="116" r="98" fill="none" stroke="#70A66E" stroke-width="2" opacity=".7"/>
+  <path d="M818 18c34 28 43 70 0 155c-43-85-34-127 0-155Z" fill="#4E8754" opacity=".85"/>
+  <path d="M818 37v111" stroke="#FCFDF9" stroke-width="2" opacity=".85"/>
+  <rect x="60" y="113" width="6" height="337" fill="#4E8754"/>
+  <text x="100" y="159" fill="#4E8754" font-family="Hiragino Sans, Yu Gothic, Noto Sans JP, sans-serif" font-size="16" font-weight="700" letter-spacing="3">BUSINESS DEVELOPMENT / SYSTEM ENGINEER</text>
+  <text x="100" y="274" fill="#183329" font-family="Hiragino Sans, Yu Gothic, Noto Sans JP, sans-serif" font-size="64" font-weight="700" letter-spacing="2">下村 宗大</text>
+  <text x="103" y="317" fill="#4C6856" font-family="Hiragino Sans, Yu Gothic, Noto Sans JP, sans-serif" font-size="20" letter-spacing="1.5">Munehiro Shimomura</text>
+  <line x1="100" y1="364" x2="562" y2="364" stroke="#BFD8BE" stroke-width="1.5"/>
+  <text x="100" y="408" fill="#183329" font-family="Hiragino Sans, Yu Gothic, Noto Sans JP, sans-serif" font-size="21">サーキュラーイコノミー事業部</text>
+  <text x="100" y="448" fill="#4C6856" font-family="Arial, Hiragino Sans, sans-serif" font-size="17">munehiro.shimomura@xxxx</text>
+  <text x="601" y="386" fill="#183329" font-family="Arial, sans-serif" font-size="19" letter-spacing="2">AI × RFID</text>
+  <text x="566" y="419" fill="#183329" font-family="Arial, sans-serif" font-size="19" letter-spacing="2">× CIRCULARITY</text>
+  <text x="597" y="453" fill="#4E8754" font-family="Arial, sans-serif" font-size="12" letter-spacing="2">DESIGNING THE LOOP</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="91mm" height="55mm" viewBox="0 0 910 550" role="img" aria-labelledby="title desc">
+  <title id="title">下村宗大 名刺 裏面</title>
+  <desc id="desc">白をベースに深緑と淡緑を配した、専門性と協業テーマを整理する横型名刺</desc>
+  <rect width="910" height="550" fill="#FCFDF9"/>
+  <path d="M0 0H910V54C700 27 509 68 287 36C157 17 66 38 0 56Z" fill="#E9F3E8"/>
+  <rect x="60" y="79" width="6" height="101" fill="#4E8754"/>
+  <text x="96" y="116" fill="#306D39" font-family="Hiragino Sans, Yu Gothic, Noto Sans JP, sans-serif" font-size="17" font-weight="700" letter-spacing="2">AI × 自動認識技術 × サーキュラーエコノミー</text>
+  <text x="96" y="154" fill="#183329" font-family="Hiragino Sans, Yu Gothic, Noto Sans JP, sans-serif" font-size="22" font-weight="700">資源循環と業務改善を前に進める仕組みづくり</text>
+  <line x1="60" y1="216" x2="850" y2="216" stroke="#BFD8BE" stroke-width="2"/>
+  <text x="60" y="263" fill="#306D39" font-family="Hiragino Sans, Yu Gothic, Noto Sans JP, sans-serif" font-size="17" font-weight="700" letter-spacing="2">専門領域</text>
+  <text x="60" y="302" fill="#385344" font-family="Hiragino Sans, Yu Gothic, Noto Sans JP, sans-serif" font-size="19">AI活用・業務効率化　｜　AWS　｜　RFID・バーコード</text>
+  <text x="60" y="336" fill="#385344" font-family="Hiragino Sans, Yu Gothic, Noto Sans JP, sans-serif" font-size="19">サーキュラーエコノミー　｜　サステナビリティ</text>
+  <text x="60" y="400" fill="#306D39" font-family="Hiragino Sans, Yu Gothic, Noto Sans JP, sans-serif" font-size="17" font-weight="700" letter-spacing="2">つながったら一緒にできること</text>
+  <text x="60" y="437" fill="#385344" font-family="Hiragino Sans, Yu Gothic, Noto Sans JP, sans-serif" font-size="18">企業・自治体の資源循環の仕組み検討。現場課題の整理から、</text>
+  <text x="60" y="468" fill="#385344" font-family="Hiragino Sans, Yu Gothic, Noto Sans JP, sans-serif" font-size="18">AI・クラウド・自動認識技術を活用した提案までご一緒します。</text>
+  <rect x="650" y="278" width="200" height="198" rx="12" fill="#E1F0DF"/>
+  <path d="M750 294c25 21 32 52 0 94c-32-42-25-73 0-94Z" fill="#4E8754"/>
+  <path d="M750 307v72" stroke="#E1F0DF" stroke-width="2"/>
+  <text x="750" y="405" fill="#306D39" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" letter-spacing="1.2">SUSTAINABILITY</text>
+  <text x="750" y="432" fill="#183329" text-anchor="middle" font-family="Hiragino Sans, Yu Gothic, Noto Sans JP, sans-serif" font-size="15" font-weight="700">サステナビリティー</text>
+  <text x="750" y="452" fill="#183329" text-anchor="middle" font-family="Hiragino Sans, Yu Gothic, Noto Sans JP, sans-serif" font-size="15" font-weight="700">オフィサー</text>
+  <text x="750" y="469" fill="#306D39" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" letter-spacing="1.2">CERTIFIED 2026.06</text>
+</svg>

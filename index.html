@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>名刺ギャラリー｜7/11集中講義Codex編</title>
+<style>
+  :root {
+    --bg: #f7f6f3;
+    --card-bg: #ffffff;
+    --border: #e3e0da;
+    --text-main: #2b2926;
+    --text-sub: #7a7568;
+    --accent: #a67c52;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text-main);
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+    line-height: 1.8;
+  }
+  header {
+    padding: 48px 24px 32px;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0 0 12px;
+    letter-spacing: 0.02em;
+  }
+  header p {
+    margin: 4px 0;
+    color: var(--text-sub);
+    font-size: 0.92rem;
+  }
+  header .count {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 4px 14px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: 999px;
+    font-size: 0.85rem;
+  }
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 64px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    margin: 0;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+  .card:hover {
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+  }
+  .card-images {
+    display: flex;
+    gap: 8px;
+  }
+  .card-images img {
+    width: 50%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background: #fafafa;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    cursor: zoom-in;
+  }
+  .card figcaption {
+    margin-top: 10px;
+    font-size: 0.88rem;
+    text-align: center;
+    color: var(--text-main);
+    word-break: break-word;
+  }
+  #lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(20,18,15,0.86);
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    cursor: zoom-out;
+    padding: 24px;
+  }
+  #lightbox.open { display: flex; }
+  #lightbox img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 6px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+  }
+  footer {
+    text-align: center;
+    padding: 24px;
+    color: var(--text-sub);
+    font-size: 0.8rem;
+  }
+  @media (max-width: 480px) {
+    header { padding: 36px 16px 24px; }
+    main { padding: 0 16px 48px; }
+    .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>名刺ギャラリー</h1>
+  <p>2026/7/11 集中講義Codex編</p>
+  <p>参加者の皆様に作成いただいた名刺をご紹介します</p>
+  <span class="count">52名分</span>
+</header>
+<main>
+  <div class="grid">
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/001_front.jpg" alt="にゃおこ様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/001_back.jpg" alt="にゃおこ様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>にゃおこ</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/002_front.jpg" alt="稲地絢子様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/002_back.jpg" alt="稲地絢子様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>稲地絢子</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/003_front.jpg" alt="てら様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/003_back.jpg" alt="てら様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>てら</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/004_front.svg" alt="下村宗大様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/004_back.svg" alt="下村宗大様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>下村宗大</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/005_front.jpg" alt="MISA_o様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/005_back.jpg" alt="MISA_o様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>MISA_o</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/006_front.jpg" alt="ヨピ｜ももんが様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/006_back.jpg" alt="ヨピ｜ももんが様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>ヨピ｜ももんが</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/007_front.jpg" alt="ゆきの様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/007_back.jpg" alt="ゆきの様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>ゆきの</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/008_front.jpg" alt="REMI様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/008_back.jpg" alt="REMI様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>REMI</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/009_front.jpg" alt="masana様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/009_back.jpg" alt="masana様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>masana</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/010_front.jpg" alt="Meg様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/010_back.jpg" alt="Meg様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>Meg</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/011_front.jpg" alt="神谷 敬吾様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/011_back.jpg" alt="神谷 敬吾様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>神谷 敬吾</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/012_front.jpg" alt="大串厚様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/012_back.jpg" alt="大串厚様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>大串厚</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/013_front.jpg" alt="peace land様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/013_back.jpg" alt="peace land様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>peace land</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/014_front.jpg" alt="鶴岡 周一様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/014_back.jpg" alt="鶴岡 周一様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>鶴岡 周一</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/015_front.jpg" alt="工藤 真義様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/015_back.jpg" alt="工藤 真義様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>工藤 真義</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/016_front.jpg" alt="雪舟様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/016_back.jpg" alt="雪舟様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>雪舟</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/017_front.svg" alt="nanami様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/017_back.svg" alt="nanami様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>nanami</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/018_front.jpg" alt="みにまむ様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/018_back.jpg" alt="みにまむ様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>みにまむ</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/019_front.jpg" alt="Naka様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/019_back.jpg" alt="Naka様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>Naka</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/020_front.jpg" alt="野良猫の鍵しっぽ様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/020_back.jpg" alt="野良猫の鍵しっぽ様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>野良猫の鍵しっぽ</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/021_front.jpg" alt="nao様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/021_back.jpg" alt="nao様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>nao</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/022_front.jpg" alt="Mari様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/022_back.jpg" alt="Mari様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>Mari</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/023_front.jpg" alt="兒玉 格言様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/023_back.jpg" alt="兒玉 格言様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>兒玉 格言</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/024_front.jpg" alt="Kaz様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/024_back.jpg" alt="Kaz様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>Kaz</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/025_front.jpg" alt="小畑 江里様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/025_back.jpg" alt="小畑 江里様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>小畑 江里</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/026_front.jpg" alt="福地 政弘様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/026_back.jpg" alt="福地 政弘様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>福地 政弘</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/027_front.jpg" alt="井田様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/027_back.jpg" alt="井田様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>井田</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/028_front.jpg" alt="ナカジ様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/028_back.jpg" alt="ナカジ様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>ナカジ</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/029_front.jpg" alt="いのり様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/029_back.jpg" alt="いのり様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>いのり</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/030_front.jpg" alt="sana様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/030_back.jpg" alt="sana様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>sana</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/031_front.jpg" alt="Speeedking様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/031_back.jpg" alt="Speeedking様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>Speeedking</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/032_front.jpg" alt="しおさん様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/032_back.jpg" alt="しおさん様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>しおさん</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/033_front.jpg" alt="ミカミ様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/033_back.jpg" alt="ミカミ様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>ミカミ</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/034_front.jpg" alt="TAKUZO様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/034_back.jpg" alt="TAKUZO様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>TAKUZO</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/035_front.jpg" alt="アンジー様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/035_back.jpg" alt="アンジー様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>アンジー</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/036_front.jpg" alt="Miharu_U様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/036_back.jpg" alt="Miharu_U様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>Miharu_U</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/037_front.jpg" alt="WAKIYA様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/037_back.jpg" alt="WAKIYA様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>WAKIYA</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/038_front.jpg" alt="やす様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/038_back.jpg" alt="やす様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>やす</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/039_front.jpg" alt="non様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/039_back.jpg" alt="non様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>non</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/040_front.jpg" alt="あつしプル様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/040_back.jpg" alt="あつしプル様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>あつしプル</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/041_front.jpg" alt="tomo様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/041_back.jpg" alt="tomo様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>tomo</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/042_front.jpg" alt="emmysunny様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/042_back.jpg" alt="emmysunny様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>emmysunny</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/043_front.jpg" alt="やまぐちしゅうじ様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/043_back.jpg" alt="やまぐちしゅうじ様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>やまぐちしゅうじ</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/044_front.jpg" alt="タカハシ(dalive)様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/044_back.jpg" alt="タカハシ(dalive)様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>タカハシ(dalive)</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/045_front.jpg" alt="CHiSA様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/045_back.jpg" alt="CHiSA様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>CHiSA</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/046_front.jpg" alt="tomo様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/046_back.jpg" alt="tomo様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>tomo</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/047_front.jpg" alt="渡邉ひとし様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/047_back.jpg" alt="渡邉ひとし様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>渡邉ひとし</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/048_front.jpg" alt="YN様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/048_back.jpg" alt="YN様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>YN</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/049_front.jpg" alt="寺井大輔様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/049_back.jpg" alt="寺井大輔様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>寺井大輔</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/050_front.jpg" alt="窪井香穂里様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/050_back.jpg" alt="窪井香穂里様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>窪井香穂里</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/051_front.jpg" alt="ebimaru様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/051_back.jpg" alt="ebimaru様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>ebimaru</figcaption>
+    </figure>
+    <figure class="card">
+      <div class="card-images">
+        <img src="images_web/052_front.jpg" alt="いよかん.s様 名刺（表）" loading="lazy" onclick="openLightbox(this.src)">
+        <img src="images_web/052_back.jpg" alt="いよかん.s様 名刺（裏）" loading="lazy" onclick="openLightbox(this.src)">
+      </div>
+      <figcaption>いよかん.s</figcaption>
+    </figure>
+  </div>
+</main>
+<footer>
+  ご紹介の許可をいただいた方のみ掲載しています
+</footer>
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="">
+</div>
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+</body>
+</html>
